@@ -14,12 +14,12 @@ MERK : UTKAST - UNDER ARBEID
 
 h2. Prosess for sending av papir post
 
-"Meldingen":../meldinger/ i Sikker digital post flyter mellom "Aktørene":Aktorer slik det beskrives i flyt diagrammet under.
+"Meldingen":../meldinger/ i Sikker digital post flyter mellom "Aktørene":Aktorer slik det beskrives i flytdiagrammet under.
 
 Ovordnet er meldingsflyten slik:
 
 # Avsender[1] sender en "Digital postmelding":../meldinger/DigitalPostMelding via Meldingsformidler til Utskriftstjeneste
-# Postkasse sender en eller fler "Kvitteringsmeldinger":../meldinger/KvitteringsMelding til Meldingsformidler
+# Utskriftstjenesten sender en eller fler "Kvitteringsmeldinger":../meldinger/KvitteringsMelding til Meldingsformidler
 # Avsender henter "Kvitteringsmeldinger":../meldinger/KvitteringsMelding fra Meldingsformidler
 
 (Meldinger prefikset *eb:* i diagrammet tilhører transportlaget, men er tatt med for å vise sammenhengen)
@@ -30,9 +30,9 @@ table(table table-striped).
 |_. Prosess |_. Fra |_. Til |_. Beskrivelse |
 | "DigitalPostmelding":../meldinger/DigitalPostMelding  | "Avsender":Aktorer	      | "Meldingsformidler":Aktorer | Avsender sender alltid sine meldinger til meldingsformidler. Transportkvittering fra meldingsformidler indikerer at denne har tatt over ansvaret for videre formidling av meldingen |
 | DigitalPostmelding                                    | "Meldingsformidler":Aktorer | "Utskriftstjeneste":Aktorer | Meldingsformidler mellomlagrer meldingen inntil Utskriftstjeneste har returnert en transportkvittering. |
-| "Mottakskvittering[2]":../meldinger/Mottakskvittering | "Utskriftstjeneste":Aktorer | "Meldingsformidler":Aktorer | Utskriftstjeneste sender en "Mottakskvittering":../meldinger/Mottakskvittering for å signalisere at utskriftstjenesten har mottatt og lagt meldingen klar til behandling. |
-| "Postlagtkvittering[3]":../meldinger/Postlagtkvittering  | "Utskriftstjeneste":Aktorer | "Meldingsformidler":Aktorer | Utskriftstjeneste sender en "Postlagtkvittering":../meldinger/Postlagtkvittering for å signalisere at posten er skrevet ut, konvolutert og postlagt. |
-| "ReturPostkvittering[5]":../meldinger/ReturPostkvittering  | "Utskriftstjeneste":Aktorer | "Meldingsformidler":Aktorer | Utskriftstjeneste sender en "ReturPostkvittering":../meldinger/ReturPostkvittering for å signalisere at posten har kommet tilbake og ikke kan leveres til innbygger. |
+| "Mottakskvittering":../meldinger/Mottakskvittering [2] | "Utskriftstjeneste":Aktorer | "Meldingsformidler":Aktorer | Utskriftstjeneste sender en "Mottakskvittering":../meldinger/Mottakskvittering for å signalisere at utskriftstjenesten har mottatt og lagt meldingen klar til behandling. |
+| "Postlagtkvittering":../meldinger/Postlagtkvittering [3]  | "Utskriftstjeneste":Aktorer | "Meldingsformidler":Aktorer | Utskriftstjeneste sender en "Postlagtkvittering":../meldinger/Postlagtkvittering for å signalisere at posten er skrevet ut, konvolutert og postlagt. |
+| "ReturPostkvittering":../meldinger/ReturPostkvittering [5] | "Utskriftstjeneste":Aktorer | "Meldingsformidler":Aktorer | Utskriftstjeneste sender en "ReturPostkvittering":../meldinger/ReturPostkvittering for å signalisere at posten har kommet tilbake og ikke kan leveres til innbygger. |
 | HentKvittering                                        | "Avsender":Aktorer 		  | "Meldingsformidler":Aktorer | Avsender sender forespørsel til Meldingsformidler om å få levert ventende kvitteringer[4] |
 
 fn1. Avsender bør også ha et aktivt forhold til statusen til en melding. Meldingsflytdiagrammet kan med fordel ses i sammenheng med "tilstandsdiagrammet":avsender_tilstanddiagram for sikker digital post.
